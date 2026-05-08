@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+    /* Colors - Modern Journey Palette */
+    --color-brand-light: #f8fafc;
+    --color-brand-primary: #6366f1;
+    --color-brand-secondary: #06b6d4;
+    --color-brand-accent: #f472b6;
+    --color-brand-surface: #ffffff;
+    
+    /* Slate adjustments for softer text */
+    --color-slate-850: #1e293b;
+
+    /* Custom Rounding (The "Pill" and "Journey" feel) */
+    --radius-pill: 100px;
+    --radius-journey: 24px;
+
+    /* Shadows for elevation */
+    --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+    --shadow-active: 0 10px 25px -5px rgba(99, 102, 241, 0.2);
+}
+
+/* Base Styles */
+@layer base {
+    body {
+        @apply bg-brand-light text-slate-850 antialiased;
+        font-family: 'Inter', sans-serif;
+    }
+
+    h1, h2, h3, .font-display {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+}

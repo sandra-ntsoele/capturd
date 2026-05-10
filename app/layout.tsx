@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
 	subsets: ["latin"],
@@ -26,7 +27,21 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 			lang="en"
 			className={`${plusJakartaSans.variable} ${inter.variable} h-full antialiased`}
 		>
-			<body className="min-h-full flex flex-col bg-brand-light text-slate-850">
+            <body className="min-h-full flex flex-col bg-brand-light text-slate-850">
+        		<div className="bg-brand-light selection:bg-accent-pink/20">
+                    <nav className="flex justify-between items-center px-8 py-6 max-w-7xl mx-auto">
+                        <Link href={"/"}>
+                            <span className="text-2xl font-bold tracking-tight font-display text-brand-dark">
+                                capturd
+                            </span>
+                        </Link>
+                        <div className="flex gap-8 items-center">
+                            <button className="px-5 py-2 bg-brand-dark text-white rounded-pill text-sm font-semibold shadow-active">
+                                Sign In
+                            </button>
+                        </div>
+                    </nav>
+                </div>
 				{children}
 			</body>
 		</html>

@@ -21,17 +21,16 @@
 
 @layer base {
 	body {
-		/* Ensuring foreground color is explicitly set to our dark slate */
 		@apply bg-brand-light text-slate-850 antialiased;
-		font-family: "Inter", sans-serif;
+		font-family: var(--font-inter), "sans-serif";
 	}
 
 	h1,
 	h2,
 	h3,
 	.font-display {
-		@apply text-slate-850; /* Explicitly set heading colors */
-		font-family: "Plus Jakarta Sans", sans-serif;
+		@apply text-slate-850;
+		font-family: var(--font-plus-jakarta), sans-serif;
 	}
 }
 

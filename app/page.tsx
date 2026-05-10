@@ -1,19 +1,9 @@
 import { ShieldCheck, Sparkles, ArrowRight, ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
 	return (
 		<div className="min-h-screen bg-brand-light selection:bg-accent-pink/20">
-			{/* Minimal Nav */}
-			<nav className="flex justify-between items-center px-8 py-6 max-w-7xl mx-auto">
-				<span className="text-2xl font-bold tracking-tight font-display text-brand-dark">
-					capturd
-				</span>
-				<div className="flex gap-8 items-center">
-					<button className="px-5 py-2 bg-brand-dark text-white rounded-pill text-sm font-semibold shadow-active">
-						Sign In
-					</button>
-				</div>
-			</nav>
 
 			{/* Hero Section */}
 			<section className="px-6 pt-16 pb-24 max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
@@ -28,14 +18,17 @@ export default function Home() {
 						</span>
 					</h1>
 					<p className="text-lg text-slate-500 leading-relaxed mb-10 max-w-lg">
-						Capturd is a suite of intentional tools for couples.
+						Capturd is a suite of tools for couples.
 						From aligning your values to securing your legacy, we
 						help you capture what matters most.
 					</p>
 
-					{/* Primary Ecosystem CTAs */}
+					{/* CTAs */}
 					<div className="flex flex-col gap-4">
-						<button className="group flex items-center justify-between w-full max-w-md p-6 bg-brand-dark text-white rounded-journey shadow-active hover:scale-[1.02] transition-all">
+                        <Link
+                            className="group flex items-center justify-between w-full max-w-md p-6 bg-brand-dark text-white rounded-journey shadow-active hover:scale-[1.02] transition-all"
+                            href={"/foundation"}
+                        >
 							<div className="flex items-center gap-4">
 								<div className="p-3 bg-white/10 rounded-2xl">
 									<Sparkles
@@ -51,7 +44,7 @@ export default function Home() {
 								</div>
 							</div>
 							<ArrowRight className="opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all" />
-						</button>
+						</Link>
 
 						<button className="hidden group flex items-center justify-between w-full max-w-md p-6 bg-white border border-slate-200 text-brand-dark rounded-journey hover:bg-slate-50 transition-all">
 							<div className="flex items-center gap-4">

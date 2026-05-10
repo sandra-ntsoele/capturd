@@ -4,7 +4,6 @@ import Link from "next/link";
 export default function Home() {
 	return (
 		<div className="min-h-screen bg-brand-light selection:bg-accent-pink/20">
-
 			{/* Hero Section */}
 			<section className="px-6 pt-16 pb-24 max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
 				<div>
@@ -18,17 +17,17 @@ export default function Home() {
 						</span>
 					</h1>
 					<p className="text-lg text-slate-500 leading-relaxed mb-10 max-w-lg">
-						Capturd is a suite of tools for couples.
-						From aligning your values to securing your legacy, we
-						help you capture what matters most.
+						Capturd is a suite of tools for couples. From aligning
+						your values to securing your legacy, we help you capture
+						what matters most.
 					</p>
 
 					{/* CTAs */}
 					<div className="flex flex-col gap-4">
-                        <Link
-                            className="group flex items-center justify-between w-full max-w-md p-6 bg-brand-dark text-white rounded-journey shadow-active hover:scale-[1.02] transition-all"
-                            href={"/foundation"}
-                        >
+						<Link
+							className="group flex items-center justify-between w-full max-w-md p-6 bg-brand-dark text-white rounded-journey shadow-active hover:scale-[1.02] transition-all"
+							href={"/foundation"}
+						>
 							<div className="flex items-center gap-4">
 								<div className="p-3 bg-white/10 rounded-2xl">
 									<Sparkles

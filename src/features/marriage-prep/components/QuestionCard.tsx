@@ -6,6 +6,7 @@ import {
 	DialogBackdrop,
 	DialogPanel,
 	DialogTitle,
+    Textarea,
 } from "@headlessui/react";
 import { questions } from "../constants/questions";
 
@@ -57,10 +58,11 @@ export default function QuestionCard({
 							{getRandomQuestion().title}
                         </p>
                         
-                        <input
-                            type="textarea"
-                            placeholder="answer here"
+                        <Textarea
+                            name="answer"
                             className="bg-brand-light border border-brand-surface p-5 rounded w-full"
+                            autoFocus
+                            placeholder="Add your answer here..."
                         />
 
 						<div className="flex gap-4">

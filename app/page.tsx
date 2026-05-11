@@ -26,7 +26,7 @@ export default function Home() {
 					<div className="flex flex-col gap-4">
 						<Link
 							className="group flex items-center justify-between w-full max-w-md p-6 bg-brand-dark text-white rounded-journey shadow-active hover:scale-[1.02] transition-all"
-							href={"/foundation"}
+							href={"/marriage-prep"}
 						>
 							<div className="flex items-center gap-4">
 								<div className="p-3 bg-white/10 rounded-2xl">
@@ -36,7 +36,7 @@ export default function Home() {
 									/>
 								</div>
 								<div className="text-left">
-									<p className="font-bold">Foundation</p>
+									<p className="font-bold">Marriage Prep</p>
 									<p className="text-xs text-white/60 text-wrap">
 										Deep alignment marriage preparation.
 									</p>

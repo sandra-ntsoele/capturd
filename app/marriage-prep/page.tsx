@@ -1,10 +1,10 @@
 "use client";
 
-import { dashboardCategoryList } from "@/src/features/foundation/constants/dashboardCategoryList";
+import { dashboardCategoryList } from "@/src/features/marriage-prep/constants/dashboardCategoryList";
 import Link from "next/link";
-import "../../src/features/foundation/styles/ProgressBar.css";
+import "../../src/features/marriage-prep/styles/ProgressBar.css";
 import { useState } from "react";
-import QuestionCard from "@/src/features/foundation/components/QuestionCard";
+import QuestionCard from "@/src/features/marriage-prep/components/QuestionCard";
 
 export default function FoundationDashboard() {
 	const [revealQuestion, setRevealQuestion] = useState<boolean>(false);

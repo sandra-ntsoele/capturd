@@ -37,7 +37,7 @@ export default function RootLayout({
 								capturd
 							</span>
 						</Link>
-						<div className="flex gap-8 items-center">
+						<div className="flex gap-8 items-center hidden">
 							<button className="px-5 py-2 bg-brand-dark text-white rounded-pill text-sm font-semibold shadow-active">
 								Sign In
 							</button>

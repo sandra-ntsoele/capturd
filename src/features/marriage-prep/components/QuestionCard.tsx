@@ -68,6 +68,12 @@ export default function QuestionCard({
 						<div className="flex gap-4">
 							<button onClick={() => setRevealQuestion(false)}>
 								Cancel
+                            </button>
+                            <button
+                                onClick={() => setRevealQuestion(false)}
+                                className="bg-brand-dark text-white px-5 py-2 rounded-pill font-semibold shadow-active active:scale-95 transition-transform cursor-pointer"
+                            >
+								Submit Answer
 							</button>
 						</div>
 					</DialogPanel>

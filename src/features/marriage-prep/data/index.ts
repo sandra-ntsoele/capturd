@@ -1,5 +1,6 @@
 import { Category } from "../types/Category";
 import { Question } from "../types/Question";
+import { childrenQuestions } from "./childrenQuestions";
 import { conflictQuestions } from "./conflictQuestions";
 import { entertainmentQuestion } from "./entertainmentQuestion";
 import { friendsQuestions } from "./friendsQuestions";
@@ -19,5 +20,6 @@ export const questions: Question[] = [
     ...lifestyleQuestions,
     ...theologyQuestions,
     ...workQuestions,
-    ...worshipQuestions
+    ...worshipQuestions,
+    ...childrenQuestions
 ];

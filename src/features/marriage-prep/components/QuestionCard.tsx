@@ -8,7 +8,7 @@ import {
 	DialogTitle,
     Textarea,
 } from "@headlessui/react";
-import { questions } from "../constants/questions";
+import { questions } from "../data";
 
 interface QuestionCardProps {
 	questionCategory: string;

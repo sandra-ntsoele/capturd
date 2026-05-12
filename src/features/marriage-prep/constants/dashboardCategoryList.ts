@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { Category } from "../types/Category";
 import { ForwardRefExoticComponent } from "react";
-import { questions } from "./questions";
+import { questions } from "../data";
 
 interface DashboardCategory {
     name: Category

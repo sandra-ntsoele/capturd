@@ -1,7 +1,7 @@
-import { Question } from "../types/Question";
+import type { Question } from "../types/Question";
 
 export const healthSicknessQuestion: Question[] = [
-    {
+	{
 		sequence: 1,
 		title: "Do you have, or have you had any, sicknesses or physical problems that could affect our relationship? Allergies, cancer, eating disorders, venereal disease, etc.",
 		category: "Health and Sickness",
@@ -21,4 +21,4 @@ export const healthSicknessQuestion: Question[] = [
 		title: "Do you have any habits that adversely affect health?",
 		category: "Health and Sickness",
 	},
-]
+];

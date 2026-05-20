@@ -1,4 +1,4 @@
-import { Question } from "../types/Question";
+import type { Question } from "../types/Question";
 
 export const entertainmentQuestion: Question[] = [
 	{
@@ -31,4 +31,4 @@ export const entertainmentQuestion: Question[] = [
 		title: "What are the criteria for movies and theater? What will our guidelines be for the kids?",
 		category: "Entertainment",
 	},
-]
+];

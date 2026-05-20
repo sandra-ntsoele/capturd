@@ -10,20 +10,21 @@ import {
 	Users,
 	Stethoscope,
 } from "lucide-react";
-import { Category } from "../types/Category";
-import { ForwardRefExoticComponent } from "react";
+import type { ForwardRefExoticComponent } from "react";
 import { questions } from "../data";
+import type { Category } from "../types/Category";
 
 interface DashboardCategory {
-    name: Category
-    icon: ForwardRefExoticComponent<any>,
-    color: string,
-    questionCount: number
+	name: Category;
+	icon: ForwardRefExoticComponent<any>;
+	color: string;
+	questionCount: number;
 }
 
 const questionCount = (category: Category) => {
-    return questions.filter((question) => question.category === category).length
-}
+	return questions.filter((question) => question.category === category)
+		.length;
+};
 
 export const dashboardCategoryList: DashboardCategory[] = [
 	{

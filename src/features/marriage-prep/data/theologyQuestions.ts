@@ -1,7 +1,7 @@
-import { Question } from "../types/Question";
+import type { Question } from "../types/Question";
 
 export const theologyQuestions: Question[] = [
-    {
+	{
 		sequence: 1,
 		title: "What do you believe about . . . everything?",
 		category: "Theology",
@@ -16,4 +16,4 @@ export const theologyQuestions: Question[] = [
 		title: "Discover how you form your views. What is the reasoning-believing process? How do you handle the Bible?",
 		category: "Theology",
 	},
-] 
+];

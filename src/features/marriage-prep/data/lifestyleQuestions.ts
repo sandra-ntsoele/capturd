@@ -1,7 +1,7 @@
-import { Question } from "../types/Question";
+import type { Question } from "../types/Question";
 
 export const lifestyleQuestions: Question[] = [
-    {
+	{
 		sequence: 1,
 		title: "Own a home or not? Why?",
 		category: "Lifestyle",
@@ -31,4 +31,4 @@ export const lifestyleQuestions: Question[] = [
 		title: "Where will you buy clothes: department store, thrift store, or in between? Why?",
 		category: "Lifestyle",
 	},
-]
+];

@@ -1,4 +1,4 @@
-import { Question } from "../types/Question";
+import type { Question } from "../types/Question";
 
 export const conflictQuestions: Question[] = [
 	{
@@ -31,4 +31,4 @@ export const conflictQuestions: Question[] = [
 		title: "What is our view of getting help from friends or counselors?",
 		category: "Conflict",
 	},
-]
+];

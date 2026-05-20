@@ -1,7 +1,7 @@
-import { Question } from "../types/Question";
+import type { Question } from "../types/Question";
 
 export const husbandAndWifeQuestion: Question[] = [
-    {
+	{
 		sequence: 1,
 		title: "What is the meaning of headship and submission in the Bible and in our marriage?",
 		category: "Husband and Wife",
@@ -36,4 +36,4 @@ export const husbandAndWifeQuestion: Question[] = [
 		title: "Who does the checkbook — or are there two?",
 		category: "Husband and Wife",
 	},
-]
+];

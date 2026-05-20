@@ -1,4 +1,4 @@
-import { Question } from "../types/Question";
+import type { Question } from "../types/Question";
 
 export const workQuestions: Question[] = [
 	{
@@ -21,4 +21,4 @@ export const workQuestions: Question[] = [
 		title: "What determines where we will locate? Job? Whose job? Church? Family?",
 		category: "Work",
 	},
-]
+];

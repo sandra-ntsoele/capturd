@@ -1,89 +1,141 @@
-import logoDark from "./logo-dark.svg";
-import logoLight from "./logo-light.svg";
+import { Sparkles, ArrowRight, Heart } from "lucide-react";
+import { Link } from "react-router";
 
 export function Welcome() {
-  return (
-    <main className="flex items-center justify-center pt-16 pb-4">
-      <div className="flex-1 flex flex-col items-center gap-16 min-h-0">
-        <header className="flex flex-col items-center gap-9">
-          <div className="w-[500px] max-w-[100vw] p-4">
-            <img
-              src={logoLight}
-              alt="React Router"
-              className="block w-full dark:hidden"
-            />
-            <img
-              src={logoDark}
-              alt="React Router"
-              className="hidden w-full dark:block"
-            />
-          </div>
-        </header>
-        <div className="max-w-[300px] w-full space-y-6 px-4">
-          <nav className="rounded-3xl border border-gray-200 p-6 dark:border-gray-700 space-y-4">
-            <p className="leading-6 text-gray-700 dark:text-gray-200 text-center">
-              What&apos;s next?
-            </p>
-            <ul>
-              {resources.map(({ href, text, icon }) => (
-                <li key={href}>
-                  <a
-                    className="group flex items-center gap-3 self-stretch p-3 leading-normal text-blue-700 hover:underline dark:text-blue-500"
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {icon}
-                    {text}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </main>
-  );
-}
+	return (
+		<div className="min-h-screen bg-brand-light selection:bg-accent-pink/20">
+			{/* Hero Section */}
+			<section className="px-6 py-8 pb-24 max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+				<div>
+					<div className="inline-flex items-center gap-2 px-3 py-1 rounded-pill bg-white border border-slate-100 shadow-sm text-[10px] font-bold tracking-widest text-slate-500 mb-8 uppercase">
+						Intentional Marriage Preparation
+					</div>
 
-const resources = [
-  {
-    href: "https://reactrouter.com/docs",
-    text: "React Router Docs",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="20"
-        viewBox="0 0 20 20"
-        fill="none"
-        className="stroke-gray-600 group-hover:stroke-current dark:stroke-gray-300"
-      >
-        <path
-          d="M9.99981 10.0751V9.99992M17.4688 17.4688C15.889 19.0485 11.2645 16.9853 7.13958 12.8604C3.01467 8.73546 0.951405 4.11091 2.53116 2.53116C4.11091 0.951405 8.73546 3.01467 12.8604 7.13958C16.9853 11.2645 19.0485 15.889 17.4688 17.4688ZM2.53132 17.4688C0.951566 15.8891 3.01483 11.2645 7.13974 7.13963C11.2647 3.01471 15.8892 0.951453 17.469 2.53121C19.0487 4.11096 16.9854 8.73551 12.8605 12.8604C8.73562 16.9853 4.11107 19.0486 2.53132 17.4688Z"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
-  },
-  {
-    href: "https://rmx.as/discord",
-    text: "Join Discord",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="20"
-        viewBox="0 0 24 20"
-        fill="none"
-        className="stroke-gray-600 group-hover:stroke-current dark:stroke-gray-300"
-      >
-        <path
-          d="M15.0686 1.25995L14.5477 1.17423L14.2913 1.63578C14.1754 1.84439 14.0545 2.08275 13.9422 2.31963C12.6461 2.16488 11.3406 2.16505 10.0445 2.32014C9.92822 2.08178 9.80478 1.84975 9.67412 1.62413L9.41449 1.17584L8.90333 1.25995C7.33547 1.51794 5.80717 1.99419 4.37748 2.66939L4.19 2.75793L4.07461 2.93019C1.23864 7.16437 0.46302 11.3053 0.838165 15.3924L0.868838 15.7266L1.13844 15.9264C2.81818 17.1714 4.68053 18.1233 6.68582 18.719L7.18892 18.8684L7.50166 18.4469C7.96179 17.8268 8.36504 17.1824 8.709 16.4944L8.71099 16.4904C10.8645 17.0471 13.128 17.0485 15.2821 16.4947C15.6261 17.1826 16.0293 17.8269 16.4892 18.4469L16.805 18.8725L17.3116 18.717C19.3056 18.105 21.1876 17.1751 22.8559 15.9238L23.1224 15.724L23.1528 15.3923C23.5873 10.6524 22.3579 6.53306 19.8947 2.90714L19.7759 2.73227L19.5833 2.64518C18.1437 1.99439 16.6386 1.51826 15.0686 1.25995ZM16.6074 10.7755L16.6074 10.7756C16.5934 11.6409 16.0212 12.1444 15.4783 12.1444C14.9297 12.1444 14.3493 11.6173 14.3493 10.7877C14.3493 9.94885 14.9378 9.41192 15.4783 9.41192C16.0471 9.41192 16.6209 9.93851 16.6074 10.7755ZM8.49373 12.1444C7.94513 12.1444 7.36471 11.6173 7.36471 10.7877C7.36471 9.94885 7.95323 9.41192 8.49373 9.41192C9.06038 9.41192 9.63892 9.93712 9.6417 10.7815C9.62517 11.6239 9.05462 12.1444 8.49373 12.1444Z"
-          strokeWidth="1.5"
-        />
-      </svg>
-    ),
-  },
-];
+					<h1 className="text-6xl md:text-7xl font-bold text-brand-dark font-display leading-[1.1] mb-8">
+						Build a foundation <br />
+						<span className="text-accent-pink">that lasts.</span>
+					</h1>
+
+					<p className="text-lg text-slate-500 leading-relaxed mb-10 max-w-lg">
+						Capturd is a shared space for couples to explore the
+						deep, essential questions before saying &ldquo;I
+						do.&rdquo; Capture your thoughts, align your visions,
+						and start your journey.
+					</p>
+
+					<div>
+						<Link
+							className="group inline-flex items-center justify-between min-w-[280px] max-w-md p-6 bg-brand-dark text-white rounded-journey shadow-active hover:scale-[1.02] transition-all"
+							to={"/marriage-prep"}
+						>
+							<div className="flex items-center gap-4">
+								<div className="p-3 bg-white/10 rounded-2xl">
+									<Sparkles
+										size={24}
+										className="text-accent-pink"
+									/>
+								</div>
+								<div className="text-left">
+									<p className="font-bold text-base">
+										Start Your Journey
+									</p>
+									<p className="text-xs text-white/60">
+										Explore 10 foundational categories
+									</p>
+								</div>
+							</div>
+							<ArrowRight className="opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all ml-6" />
+						</Link>
+					</div>
+				</div>
+
+				{/* Question Preview Card */}
+				<div className="relative flex justify-center py-8 hidden">
+					<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-radial-gradient from-accent-pink/5 via-transparent to-transparent pointer-events-none" />
+
+					<div className="relative glass-card p-10 gradient-pink-soft w-full max-w-sm shadow-2xl border-white/80 z-10">
+						<div className="text-[10px] font-bold tracking-widest text-accent-pink mb-6 uppercase">
+							CONFLICT
+						</div>
+						<h3 className="text-2xl font-bold text-slate-850 mb-12 font-display leading-tight">
+							Is it good to do
+							<span className="text-accent-pink font-semibold">
+								{" "}
+								things with friends{" "}
+							</span>
+							but without your spouse?
+						</h3>
+						<div className="w-full py-4 bg-brand-dark text-white rounded-pill font-semibold text-center shadow-lg text-sm">
+							Answer
+						</div>
+					</div>
+				</div>
+
+				{/* Question Preview Card */}
+				<div className="relative flex justify-center">
+					<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-radial-gradient from-accent-pink/5 via-transparent to-transparent pointer-events-none" />
+
+					<div className="relative glass-card p-10 gradient-pink-soft w-full max-w-sm rotate-[-2deg] shadow-2xl border-white/80 z-10">
+						<div className="text-[10px] font-bold tracking-widest text-accent-pink mb-6 uppercase">
+							CONFLICT
+						</div>
+						<h3 className="text-2xl font-bold text-slate-850 mb-12 font-display leading-tight">
+							Is it good to do
+							<span className="text-accent-pink font-semibold">
+								{" "}
+								things with friends{" "}
+							</span>
+							but without your spouse?
+						</h3>
+						<div className="w-full py-4 bg-brand-dark text-white rounded-pill font-semibold text-center shadow-lg">
+							Answer
+						</div>
+					</div>
+
+					<div className="absolute -bottom-8 right-0 md:-right-4 glass-card p-8 gradient-blue-soft w-full max-w-[280px] rotate-[4deg] shadow-xl border-white/80 z-20">
+						<div className="flex items-center gap-2 mb-4">
+							<Heart size={16} className="text-accent-blue" />
+							<span className="text-[10px] font-bold tracking-widest text-accent-blue uppercase font-display">
+								HUSBAND & WIFE
+							</span>
+						</div>
+						<p className="text-sm font-bold text-slate-850 mb-6 font-display leading-relaxed">
+							What are your expectations regarding household
+							responsibilities?
+						</p>
+						<div className="w-full py-2 bg-white/50 text-slate-500 border border-slate-200 rounded-pill font-semibold text-center text-xs shadow-sm">
+							Write your thoughts...
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section className="bg-white py-20 px-6 border-t border-slate-100">
+				<div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
+					<div>
+						<h2 className="text-2xl font-bold text-brand-dark font-display mb-2">
+							Where your journey leads
+						</h2>
+						<p className="text-slate-500">
+							Starting with deep alignment, growing into lifelong
+							security.
+						</p>
+					</div>
+					<div className="flex flex-wrap gap-4">
+						<div className="px-6 py-3 bg-accent-pink/10 rounded-pill border border-accent-pink/20 text-sm font-semibold text-accent-pink cursor-default">
+							Marriage Prep
+						</div>
+						{["File of Life", "Budgeting"].map((item) => (
+							<div
+								key={item}
+								className="px-6 py-3 bg-brand-light rounded-pill border border-slate-100 text-sm font-semibold text-slate-400 cursor-not-allowed"
+							>
+								{item}
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+		</div>
+	);
+}

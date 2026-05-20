@@ -1,7 +1,7 @@
-import { Question } from "../types/Question"
+import type { Question } from "../types/Question";
 
 export const worshipQuestions: Question[] = [
-    {
+	{
 		sequence: 1,
 		title: "How important is corporate worship? Other participation in church life?",
 		category: "Worship and Devotion",
@@ -31,4 +31,4 @@ export const worshipQuestions: Question[] = [
 		title: "Are we doing this now in an appropriate way: praying together about our lives and future, reading the Bible together?",
 		category: "Worship and Devotion",
 	},
-]
+];

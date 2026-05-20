@@ -2,13 +2,13 @@
 
   <img src="/public/brand//capturd-icon.png" alt="Capturd Logo" width="120" height="120" />
 
-  # Capturd
-  */kæpˈtʃərd/*
+# Capturd
 
-  **A modern, intentional ecosystem for couples.**
+_/kæpˈtʃərd/_
+
+**A modern, intentional ecosystem for couples.**
 
 [Marriage Prep](https://www.capturd.co.za/) • [File of Life](https://www.capturd.co.za/)
-
 
   <br />
 
@@ -19,11 +19,13 @@
 </div>
 
 ---
+
 ## Features
 
 ### Marriage Preparation
-*   **10 Essential Categories:** Deep-dive into categories including Theology, Finances, Children, and Conflict Resolution.
-*   **Guided Reflection:** Access curated questions designed to spark intentional conversation.
+
+- **10 Essential Categories:** Deep-dive into categories including Theology, Finances, Children, and Conflict Resolution.
+- **Guided Reflection:** Access curated questions designed to spark intentional conversation.
 
 ## Getting Started
 
@@ -39,3 +41,4 @@ pnpm install
 
 # Launch locally
 pnpm dev
+```

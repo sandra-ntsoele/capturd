@@ -16,12 +16,13 @@
 
 	--shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.03);
 	--shadow-active: 0 10px 25px -5px rgba(38, 35, 34, 0.2);
+    --font-inter: 
 }
 
 @layer base {
 	body {
 		@apply bg-brand-light text-slate-850 antialiased;
-		font-family: var(--font-inter), "sans-serif";
+		font-family: "Inter", sans-serif;
 	}
 
 	h1,
@@ -29,7 +30,7 @@
 	h3,
 	.font-display {
 		@apply text-slate-850;
-		font-family: var(--font-plus-jakarta), sans-serif;
+		font-family: "Plus Jakarta Sans", sans-serif;
 	}
 }
 
@@ -51,4 +52,11 @@
 		rgba(12, 165, 233, 0.1),
 		rgba(251, 251, 252, 0.7)
 	);
+}
+
+.inter {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    /* font-weight: <weight>; */
+    font-style: normal;
 }

@@ -54,6 +54,14 @@
 	);
 }
 
+.gradient-error-soft {
+	background: radial-gradient(
+		circle at top right,
+		rgba(245, 158, 11, 0.18),
+		rgba(251, 251, 252, 0.7)
+	);
+}
+
 .inter {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;

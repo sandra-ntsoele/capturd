@@ -1,16 +1,43 @@
+import ErrorQuestionCard from "@/features/marriage-prep/components/ErrorQuestionCard";
 import QuestionCard from "@/features/marriage-prep/components/QuestionCard";
 import { dashboardCategoryList } from "@/features/marriage-prep/constants/dashboardCategoryList";
-import { useState } from "react";
+import { questions } from "@/features/marriage-prep/data";
+import type { Question } from "@/features/marriage-prep/types/Question";
+import { useState, useEffect } from "react";
 
 export default function MarriagePrepDashboard() {
-	const [revealQuestion, setRevealQuestion] = useState<boolean>(false);
-	const [selectedCategory, setSelectedCategory] = useState<string>("");
-	let cardIsFeatured = false;
+	const [revealQuestionCard, setRevealQuestionCard] = useState<boolean>(false);
+    const [selectedCategory, setSelectedCategory] = useState<string>("");
+    const [currentQuestion, setCurrentQuestion] = useState<Question>();
 
-	const toggleQuestionCard = (selectedCategory: string) => {
-		setSelectedCategory(selectedCategory);
-		setRevealQuestion(!revealQuestion);
-	};
+    const getRandomQuestion = (filteredQuestions: Question[]): Question => {
+        const questionNum = Math.floor(
+            Math.random() * filteredQuestions.length,
+        );
+
+        return filteredQuestions[questionNum];
+    };
+
+    const toggleQuestionCard = (selectedCategory: string) => {
+        const filteredQuestions = questions.filter((question) => {
+            return question.category.includes(selectedCategory);
+        });
+
+        if (filteredQuestions.length > 0) {
+            setSelectedCategory(selectedCategory);
+            setCurrentQuestion(getRandomQuestion(filteredQuestions));
+            setRevealQuestionCard(true);
+        } else {
+            setRevealQuestionCard(true);
+        }
+    };
+    
+    useEffect(() => {
+        if (!revealQuestionCard) {
+            setCurrentQuestion(undefined);
+        }
+    }, [revealQuestionCard])
+    
 
 	return (
 		<div className="min-h-screen bg-brand-light selection:bg-accent-pink/20">
@@ -19,7 +46,6 @@ export default function MarriagePrepDashboard() {
                     grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
 			>
 				{dashboardCategoryList.map((cat, index) => {
-					const isFeatured = index % 3 === 0;
 
 					return (
 						<div
@@ -31,11 +57,13 @@ export default function MarriagePrepDashboard() {
                                 flex flex-col justify-between
                                 cursor-pointer
                                 ${
-									isFeatured
+									cat.isFeatured
 										? "lg:col-span-2 lg:row-span-2 min-h-[400px] gradient-blue-soft"
 										: "col-span-1 min-h-[200px] gradient-pink-soft"
 								}`}
-							onClick={() => toggleQuestionCard(cat.name)}
+                            onClick={() => {
+                                toggleQuestionCard(cat.name);
+                            }}
 						>
 							<div>
 								<span className="text-[10px] font-bold tracking-widest text-slate-500 uppercase">
@@ -64,10 +92,11 @@ export default function MarriagePrepDashboard() {
 									</progress>
 								</div>
 								<button
-									className="bg-brand-dark text-white px-5 py-2 rounded-pill text-xs font-semibold shadow-active active:scale-95 transition-transform"
+                                    className="bg-brand-dark text-white px-5 py-2 rounded-pill 
+                                    text-xs font-semibold shadow-active active:scale-95 transition-transform"
 									onClick={(e) => {
 										e.stopPropagation();
-										toggleQuestionCard(cat.name);
+                                        toggleQuestionCard(cat.name);
 									}}
 								>
 									Explore
@@ -78,14 +107,20 @@ export default function MarriagePrepDashboard() {
 				})}
 			</section>
 
-			<QuestionCard
-				questionCategory={selectedCategory}
-				revealQuestion={revealQuestion}
-				setRevealQuestion={setRevealQuestion}
-				bgColor={
-					cardIsFeatured ? "gradient-blue-soft" : "gradient-pink-soft"
-				}
-			/>
+            {currentQuestion ? 
+                <QuestionCard
+                    currentQuestion={currentQuestion}
+                    revealQuestion={revealQuestionCard}
+                    setRevealQuestion={setRevealQuestionCard}
+                    bgColor={
+                        dashboardCategoryList.find((cat) => cat.name === selectedCategory)?.isFeatured ? "gradient-blue-soft" : "gradient-pink-soft"
+                    }
+                /> : 
+                <ErrorQuestionCard
+                    revealQuestion={revealQuestionCard}
+                    setRevealQuestion={setRevealQuestionCard}
+                />
+            }
 		</div>
 	);
 }

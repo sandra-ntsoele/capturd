@@ -1,5 +1,3 @@
-// "use-client"
-
 import {
 	Description,
 	Dialog,
@@ -10,35 +8,26 @@ import {
 } from "@headlessui/react";
 import { questions } from "../data";
 import { ChevronRightCircle } from "lucide-react";
+import { useEffect, useState } from "react";
+import type { Question } from "../types/Question";
+import ErrorQuestionCard from "./ErrorQuestionCard";
 
 interface QuestionCardProps {
-	questionCategory: string;
+	currentQuestion: Question;
 	revealQuestion: boolean;
 	setRevealQuestion: (value: boolean) => void;
 	bgColor?: string;
 }
 
 export default function QuestionCard({
-	questionCategory,
+	currentQuestion,
 	revealQuestion,
 	setRevealQuestion,
 	bgColor = "",
 }: QuestionCardProps) {
-	const filteredQuestions = questions.filter((question) => {
-		return question.category.includes(questionCategory);
-	});
-
-	const getRandomQuestion = () => {
-		const questionNum = Math.floor(
-			Math.random() * filteredQuestions.length,
-		);
-
-		return filteredQuestions[questionNum];
-	};
 
 	return (
 		<>
-			<button onClick={() => setRevealQuestion(true)}>Open dialog</button>
 			<Dialog
 				open={revealQuestion}
 				onClose={() => setRevealQuestion(false)}
@@ -54,13 +43,13 @@ export default function QuestionCard({
 							className="font-bold lowercase rounded-pill 
                             bg-black text-brand-light px-3 w-max"
 						>
-							{questionCategory}
+							{currentQuestion.sequence} of 13 | {currentQuestion.category}
 						</DialogTitle>
 
 						<Description></Description>
 
 						<p className="text-2xl font-bold text-slate-850 mb-6 font-display leading-tight">
-							{getRandomQuestion().title}
+							{currentQuestion.title}
 						</p>
 
 						<Textarea

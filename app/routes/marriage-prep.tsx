@@ -4,7 +4,7 @@ import type { Route } from "./+types/marriage-prep";
 
 export function meta({}: Route.MetaArgs) {
     return [
-        {title: "Capturd | The Family Operating System"},
+        {title: "Capturd | Marriage Prep"},
         {
             name: "description",
             content: `Questions`,
